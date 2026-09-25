@@ -34,7 +34,7 @@ export const categories: GalleryCategory[] = [
 ];
 
 export const gallery: GalleryItem[] = [
-  { id: "f1", category: "Fachada", variant: "fachada", seed: 0, alt: "Fachada da pousada, ilustração" },
+  { id: "f1", category: "Fachada", variant: "fachada", seed: 0, alt: "Fachada amarela da pousada, com recepção e varandas", src: "/gallery/fachada.jpg" },
   { id: "f2", category: "Fachada", variant: "fachada", seed: 1, alt: "Entrada da pousada, ilustração" },
   { id: "q1", category: "Quartos", variant: "quarto", seed: 0, alt: "Quarto amplo, ilustração" },
   { id: "q2", category: "Quartos", variant: "quarto", seed: 2, alt: "Quarto confortável, ilustração" },

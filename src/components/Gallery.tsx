@@ -69,8 +69,8 @@ export function Gallery() {
                 onClick={() => setFilter(c)}
                 className={`min-h-[44px] rounded-full border px-4 text-sm font-medium transition active:scale-[0.97] ${
                   filter === c
-                    ? "border-pine bg-pine text-white"
-                    : "border-line bg-white text-ink hover:border-pine hover:text-pine"
+                    ? "border-ink bg-ink text-gold"
+                    : "border-line bg-white text-ink hover:border-gold-deep hover:text-gold-deep"
                 }`}
               >
                 {c}

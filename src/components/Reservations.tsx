@@ -35,10 +35,10 @@ function ChannelPicker({
         {options.map((o) => (
           <label
             key={o.id}
-            className={`inline-flex min-h-[44px] cursor-pointer items-center gap-2 rounded-full border px-4 text-sm font-medium transition has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-pine ${
+            className={`inline-flex min-h-[44px] cursor-pointer items-center gap-2 rounded-full border px-4 text-sm font-medium transition has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-gold-deep ${
               value === o.id
-                ? "border-pine bg-pine text-white"
-                : "border-line bg-white text-ink hover:border-pine"
+                ? "border-ink bg-ink text-gold"
+                : "border-line bg-white text-ink hover:border-ink"
             }`}
           >
             <input
@@ -62,7 +62,7 @@ function Status({ error, sent }: { error: string | null; sent: boolean }) {
     <div aria-live="polite" className="min-h-[1.5rem] text-sm">
       {error ? <span className="font-medium text-red-700">{error}</span> : null}
       {sent && !error ? (
-        <span className="font-medium text-pine">
+        <span className="font-medium text-gold-deep">
           Pedido preparado. Confirme o envio na janela que abriu.
         </span>
       ) : null}
@@ -250,13 +250,13 @@ export function Reservations() {
                     }
                   }}
                   className={`relative flex min-h-[44px] flex-1 items-center justify-center gap-2 rounded-full text-sm font-semibold transition ${
-                    tab === t.id ? "text-white" : "text-slate2 hover:text-ink"
+                    tab === t.id ? "text-gold" : "text-slate2 hover:text-ink"
                   }`}
                 >
                   {tab === t.id ? (
                     <motion.span
                       layoutId="tab-pill"
-                      className="absolute inset-0 rounded-full bg-pine"
+                      className="absolute inset-0 rounded-full bg-ink"
                       transition={reduce ? { duration: 0 } : { type: "spring", stiffness: 400, damping: 34 }}
                     />
                   ) : null}

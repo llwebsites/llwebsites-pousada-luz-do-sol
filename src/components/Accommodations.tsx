@@ -98,9 +98,9 @@ export function Accommodations() {
           ))}
 
           <Reveal delay={0.16}>
-            <article className="flex h-full flex-col justify-between rounded-3xl bg-pine p-8 text-white shadow-card">
+            <article className="flex h-full flex-col justify-between rounded-3xl bg-ink p-8 text-white shadow-card">
               <div>
-                <MessageCircle size={32} aria-hidden />
+                <MessageCircle size={32} className="text-gold" aria-hidden />
                 <h3 className="mt-5 text-2xl font-semibold">Reserva</h3>
                 <span className="mt-2 block text-white/85">
                   Fale direto com a pousada.
@@ -110,7 +110,7 @@ export function Accommodations() {
                 href={whatsappUrl(`Olá! Gostaria de consultar disponibilidade na ${site.name}.`)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn mt-8 bg-white text-ink hover:bg-white/90"
+                className="btn-primary mt-8"
               >
                 Consultar disponibilidade
               </a>
@@ -125,7 +125,7 @@ export function Accommodations() {
               return (
                 <li
                   key={a}
-                  className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-sm font-medium text-ink transition hover:border-pine hover:text-pine"
+                  className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-sm font-medium text-ink transition hover:border-gold-deep hover:text-gold-deep"
                 >
                   <Icon size={16} aria-hidden /> {a}
                 </li>

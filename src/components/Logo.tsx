@@ -1,32 +1,27 @@
+import Image from "next/image";
+
 type Props = {
-  tone?: "light" | "dark";
   size?: "sm" | "lg";
 };
 
-/** Marca provisória. Substituir pelo arquivo oficial da pousada quando enviado. */
-export function Logo({ tone = "dark", size = "sm" }: Props) {
-  const color = tone === "light" ? "#ffffff" : "#10222B";
-  const accent = tone === "light" ? "#ffffff" : "#1D5C4E";
+/** Versão compacta da marca (emblema + nome), para fundos escuros. */
+export function Logo({ size = "sm" }: Props) {
   const big = size === "lg";
   return (
     <span
-      className="inline-flex items-center gap-3"
-      style={{ color }}
+      className="inline-flex items-center gap-3 text-gold"
       role="img"
       aria-label="Pousada Luz do Sol"
     >
-      <svg
-        width={big ? 64 : 34}
-        height={big ? 64 : 34}
-        viewBox="0 0 64 64"
-        fill="none"
-        aria-hidden
-      >
-        <circle cx="32" cy="32" r="11" fill={accent} />
-        <g stroke={accent} strokeWidth="3.5" strokeLinecap="round">
-          <path d="M32 8v8M32 48v8M8 32h8M48 32h8M15 15l6 6M43 43l6 6M49 15l-6 6M21 43l-6 6" />
-        </g>
-      </svg>
+      <Image
+        src="/brand/logo-mark.png"
+        alt=""
+        width={big ? 96 : 52}
+        height={big ? 62 : 33}
+        className="h-auto"
+        style={{ width: big ? 96 : 52 }}
+        priority
+      />
       <span className="flex flex-col leading-none">
         <span
           className={

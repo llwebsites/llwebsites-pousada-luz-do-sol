@@ -8,14 +8,14 @@ export function Footer() {
     <footer className="on-dark bg-ink text-white">
       <div className="container-x grid gap-10 py-14 md:grid-cols-[1.2fr_1fr_1.4fr]">
         <div>
-          <Logo tone="light" />
+          <Logo />
         </div>
 
         <nav aria-label="Rodapé">
           <ul className="grid gap-1">
             {nav.map((n) => (
               <li key={n.href}>
-                <a href={n.href} className="inline-flex min-h-[40px] items-center text-sm text-white/80 transition hover:text-white">
+                <a href={n.href} className="inline-flex min-h-[40px] items-center text-sm text-white/80 transition hover:text-gold">
                   {n.label}
                 </a>
               </li>

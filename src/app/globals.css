@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --ink: #10222b;
-  --pine: #1d5c4e;
+  --ink: #0a0a0a;
+  --gold: #e3d062;
+  --gold-deep: #735406;
   color-scheme: light;
 }
 
@@ -20,13 +21,13 @@ body {
 }
 
 :focus-visible {
-  outline: 3px solid var(--pine);
+  outline: 3px solid var(--gold-deep);
   outline-offset: 3px;
   border-radius: 6px;
 }
 
 .on-dark :focus-visible {
-  outline-color: #ffffff;
+  outline-color: var(--gold);
 }
 
 @layer components {
@@ -40,13 +41,13 @@ body {
     @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full px-6 text-sm font-semibold transition duration-200 active:scale-[0.97];
   }
   .btn-primary {
-    @apply btn bg-pine text-white hover:bg-pine-dark;
+    @apply btn bg-gold text-ink hover:bg-gold-dark;
   }
   .btn-ghost {
-    @apply btn border border-line bg-white text-ink hover:border-pine hover:text-pine;
+    @apply btn border border-line bg-white text-ink hover:border-gold-deep hover:text-gold-deep;
   }
   .field {
-    @apply block w-full min-h-[44px] rounded-xl border border-line bg-white px-4 text-sm text-ink placeholder:text-slate2/70 transition focus:border-pine focus:outline-none focus:ring-2 focus:ring-pine/30;
+    @apply block w-full min-h-[44px] rounded-xl border border-line bg-white px-4 text-sm text-ink placeholder:text-slate2/70 transition focus:border-gold-deep focus:outline-none focus:ring-2 focus:ring-gold-deep/30;
   }
   .label {
     @apply mb-1.5 block text-sm font-medium text-ink;

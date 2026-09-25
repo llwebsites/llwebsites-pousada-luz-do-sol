@@ -58,14 +58,16 @@ const blocks = [
 export default function Privacidade() {
   return (
     <main id="conteudo" className="min-h-screen bg-mist">
-      <div className="container-x max-w-3xl py-12">
-        <div className="flex items-center justify-between">
-          <Logo tone="dark" />
-          <Link href="/" className="btn-ghost">
+      <div className="on-dark bg-ink">
+        <div className="container-x flex max-w-3xl items-center justify-between py-6">
+          <Logo />
+          <Link href="/" className="btn-primary">
             <ArrowLeft size={16} aria-hidden /> Voltar
           </Link>
         </div>
-        <h1 className="mt-12 text-3xl font-semibold tracking-tight">
+      </div>
+      <div className="container-x max-w-3xl py-12">
+        <h1 className="text-3xl font-semibold tracking-tight">
           Política de privacidade
         </h1>
         <div className="mt-8 grid gap-4">

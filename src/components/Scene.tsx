@@ -8,19 +8,19 @@ type Props = {
   className?: string;
 };
 
-const SKY = "#DCE7EB";
-const MIST = "#E6EDF0";
-const PINE = "#1D5C4E";
-const PINE_MID = "#3B7A6B";
-const HILL_FAR = "#86A99E";
-const HILL_NEAR = "#5C8A7C";
-const GROUND = "#2E6A57";
-const WALL = "#F7F9FA";
-const ROOF = "#A8523D";
-const INK = "#10222B";
-const GLASS = "#BFD3DB";
-const STONE = "#C9D3D8";
-const WATER = "#5BA3C4";
+const SKY = "#E4E4E4";
+const MIST = "#EEEEEE";
+const PINE = "#171717";
+const PINE_MID = "#3D3D3D";
+const HILL_FAR = "#B4B4B4";
+const HILL_NEAR = "#7A7A7A";
+const GROUND = "#262626";
+const WALL = "#FAFAFA";
+const ROOF = "#B7791F";
+const INK = "#0A0A0A";
+const GLASS = "#D8D8D8";
+const STONE = "#CFCFCF";
+const WATER = "#3A3F45";
 
 function Cloud({ x, y, s = 1, cls }: { x: number; y: number; s?: number; cls?: string }) {
   return (
@@ -36,9 +36,9 @@ function Tree({ x, y, s = 1 }: { x: number; y: number; s?: number }) {
   return (
     <g transform={`translate(${x} ${y}) scale(${s})`}>
       <rect x="-4" y="0" width="8" height="34" fill="#4A3B33" />
-      <circle cx="0" cy="-8" r="30" fill="#1F5A48" />
-      <circle cx="-18" cy="6" r="20" fill="#2A6C57" />
-      <circle cx="18" cy="6" r="20" fill="#2A6C57" />
+      <circle cx="0" cy="-8" r="30" fill="#1C1C1C" />
+      <circle cx="-18" cy="6" r="20" fill="#2E2E2E" />
+      <circle cx="18" cy="6" r="20" fill="#2E2E2E" />
     </g>
   );
 }
@@ -48,7 +48,7 @@ function Fachada({ animated }: { animated: boolean }) {
     <>
       <rect width="800" height="600" fill={SKY} />
       <circle cx="640" cy="120" r="70" fill="#fff" opacity="0.28" className={animated ? "anim-pulse" : ""} />
-      <circle cx="640" cy="120" r="44" fill="#fff" />
+      <circle cx="640" cy="120" r="44" fill="#E3D062" />
       <Cloud x={160} y={110} s={1.1} cls={animated ? "anim-drift" : ""} />
       <Cloud x={470} y={70} s={0.8} cls={animated ? "anim-drift-slow" : ""} />
       <polygon points="0,380 140,250 260,340 400,220 560,350 700,270 800,360 800,600 0,600" fill={HILL_FAR} />
@@ -57,7 +57,7 @@ function Fachada({ animated }: { animated: boolean }) {
       <polygon points="372,490 428,490 540,600 260,600" fill={STONE} />
       <rect x="190" y="300" width="420" height="190" fill={WALL} />
       <polygon points="166,304 400,212 634,304" fill={ROOF} />
-      <rect x="190" y="470" width="420" height="20" fill="#DDE5E9" />
+      <rect x="190" y="470" width="420" height="20" fill="#E2E2E2" />
       {[226, 496].map((x) => (
         <g key={x}>
           <rect x={x} y="340" width="78" height="74" rx="4" fill={INK} />
@@ -80,7 +80,7 @@ function Quarto() {
   return (
     <>
       <rect width="800" height="600" fill={MIST} />
-      <rect y="440" width="800" height="160" fill="#B9C7CE" />
+      <rect y="440" width="800" height="160" fill="#BDBDBD" />
       <rect x="70" y="110" width="170" height="200" rx="6" fill={INK} />
       <rect x="80" y="120" width="72" height="180" fill={GLASS} />
       <rect x="158" y="120" width="72" height="180" fill={GLASS} />
@@ -91,8 +91,8 @@ function Quarto() {
       <rect x="240" y="250" width="420" height="150" rx="10" fill={PINE} />
       <rect x="220" y="340" width="460" height="120" rx="14" fill="#fff" />
       <rect x="220" y="392" width="460" height="70" rx="12" fill={PINE_MID} />
-      <rect x="260" y="318" width="120" height="42" rx="18" fill="#EEF3F5" stroke={STONE} />
-      <rect x="520" y="318" width="120" height="42" rx="18" fill="#EEF3F5" stroke={STONE} />
+      <rect x="260" y="318" width="120" height="42" rx="18" fill="#F2F2F2" stroke={STONE} />
+      <rect x="520" y="318" width="120" height="42" rx="18" fill="#F2F2F2" stroke={STONE} />
       <rect x="220" y="462" width="14" height="30" fill="#4A3B33" />
       <rect x="666" y="462" width="14" height="30" fill="#4A3B33" />
       <rect x="700" y="360" width="60" height="100" rx="6" fill="#4A3B33" />
@@ -149,15 +149,15 @@ function Cafe({ animated }: { animated: boolean }) {
       <rect y="230" width="800" height="12" fill="#6F4634" />
       <g>
         <circle cx="210" cy="400" r="88" fill="#fff" />
-        <circle cx="210" cy="400" r="62" fill="#EEF3F5" />
+        <circle cx="210" cy="400" r="62" fill="#F2F2F2" />
         <ellipse cx="186" cy="392" rx="30" ry="18" fill="#C58B5A" />
         <ellipse cx="238" cy="410" rx="24" ry="14" fill="#B0764A" />
       </g>
       <g>
         <circle cx="440" cy="440" r="70" fill="#fff" />
-        <circle cx="440" cy="440" r="48" fill="#EEF3F5" />
+        <circle cx="440" cy="440" r="48" fill="#F2F2F2" />
         <circle cx="426" cy="432" r="14" fill={PINE_MID} />
-        <circle cx="456" cy="446" r="12" fill="#A8523D" />
+        <circle cx="456" cy="446" r="12" fill="#B7791F" />
       </g>
       <g transform="translate(600 360)">
         <ellipse cx="60" cy="110" rx="90" ry="26" fill="#fff" />
@@ -188,13 +188,13 @@ function Gourmet({ animated }: { animated: boolean }) {
       {[50, 150, 250, 350, 450, 550, 650, 750].map((x, i) => (
         <circle key={x} cx={x} cy={i % 2 ? 176 : 170} r="9" fill="#fff" className={animated ? "anim-pulse" : ""} />
       ))}
-      <rect x="470" y="250" width="220" height="200" fill="#8C9BA3" />
+      <rect x="470" y="250" width="220" height="200" fill="#8E8E8E" />
       <rect x="470" y="250" width="220" height="16" fill={INK} />
       <rect x="500" y="290" width="160" height="70" rx="6" fill={INK} />
       {[520, 550, 580, 610, 640].map((x) => (
-        <rect key={x} x={x} y="298" width="6" height="54" fill="#5E6D75" />
+        <rect key={x} x={x} y="298" width="6" height="54" fill="#5E5E5E" />
       ))}
-      <rect x="560" y="180" width="40" height="72" fill="#8C9BA3" />
+      <rect x="560" y="180" width="40" height="72" fill="#8E8E8E" />
       <g transform="translate(90 350)">
         <rect x="0" y="0" width="300" height="20" rx="6" fill="#8A5A44" />
         <rect x="24" y="20" width="14" height="90" fill="#6F4634" />
@@ -216,15 +216,15 @@ function Cachoeira({ animated }: { animated: boolean }) {
       <rect width="800" height="600" fill={SKY} />
       <Cloud x={560} y={90} s={0.9} cls={animated ? "anim-drift" : ""} />
       <polygon points="0,300 120,190 240,270 360,150 460,240 600,170 800,290 800,600 0,600" fill={HILL_FAR} />
-      <polygon points="0,380 160,270 280,340 340,300 340,600 0,600" fill="#3E6459" />
-      <polygon points="800,360 660,250 540,330 460,300 460,600 800,600" fill="#3E6459" />
+      <polygon points="0,380 160,270 280,340 340,300 340,600 0,600" fill="#3A3A3A" />
+      <polygon points="800,360 660,250 540,330 460,300 460,600 800,600" fill="#3A3A3A" />
       <rect x="340" y="270" width="120" height="240" fill="#fff" opacity="0.92" />
       {[365, 395, 425, 445].map((x) => (
         <line key={x} x1={x} y1="276" x2={x} y2="506" stroke={WATER} strokeWidth="5" opacity="0.5" className={animated ? "anim-flow" : ""} />
       ))}
       <ellipse cx="400" cy="520" rx="200" ry="52" fill={WATER} />
       <ellipse cx="400" cy="514" rx="130" ry="28" fill="#fff" opacity="0.5" />
-      <rect y="540" width="800" height="60" fill="#2A5548" />
+      <rect y="540" width="800" height="60" fill="#1A1A1A" />
       <Tree x={90} y={430} s={1.1} />
       <Tree x={710} y={440} s={1.1} />
     </>

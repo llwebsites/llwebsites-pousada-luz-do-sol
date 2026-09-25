@@ -35,7 +35,7 @@ export function Faq() {
                         <ChevronDown
                           size={20}
                           aria-hidden
-                          className={`shrink-0 text-pine transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                          className={`shrink-0 text-gold-deep transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
                         />
                       </button>
                     </h3>

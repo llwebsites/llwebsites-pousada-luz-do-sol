@@ -21,7 +21,7 @@ export function Location() {
           />
           <Reveal delay={0.1} className="mt-8">
             <address className="flex items-start gap-3 not-italic text-ink">
-              <MapPin className="mt-0.5 shrink-0 text-pine" size={20} aria-hidden />
+              <MapPin className="mt-0.5 shrink-0 text-gold-deep" size={20} aria-hidden />
               <span>{site.address}</span>
             </address>
             <div className="mt-6 flex flex-wrap gap-3">
