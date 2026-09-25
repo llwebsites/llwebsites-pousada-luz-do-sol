@@ -3,82 +3,27 @@
 import Image from "next/image";
 import { ChevronDown } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
-import { Scene } from "@/components/Scene";
 import { site } from "@/lib/site";
-
-/** Fundo: a mesma imagem ampliada e desfocada, só para preencher as laterais. */
-const backdropClass =
-  "absolute inset-0 h-full w-full scale-125 object-cover blur-2xl brightness-50";
-/** Frente: a imagem inteira, sem corte e sem ampliar além da altura da tela. */
-const frontClass = "absolute inset-0 h-full w-full object-contain";
 
 export function Hero() {
   const reduce = useReducedMotion();
   return (
     <section
       id="topo"
-      aria-label="Fachada da pousada"
-      className="on-dark relative h-[100svh] min-h-[560px] w-full overflow-hidden bg-ink"
+      aria-label="Cachoeira e logo da Pousada Luz do Sol"
+      className="on-dark relative h-[100svh] min-h-[520px] w-full overflow-hidden bg-ink"
     >
-      <div className="absolute inset-0 overflow-hidden">
-        {site.hasVideo && reduce ? (
-          // Movimento reduzido: só o quadro do vídeo, sem reprodução.
-          <>
-            <Image
-              src={site.videoPoster}
-              alt=""
-              fill
-              sizes="100vw"
-              className={backdropClass}
-              aria-hidden
-            />
-            <Image
-              src={site.videoPoster}
-              alt=""
-              fill
-              priority
-              sizes="100vw"
-              quality={90}
-              className={frontClass}
-            />
-          </>
-        ) : site.hasVideo ? (
-          <>
-            <video
-              className={backdropClass}
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              poster={site.videoPoster}
-              aria-hidden
-              tabIndex={-1}
-            >
-              <source src={site.videoSrc} type="video/mp4" />
-            </video>
-            <video
-              className={frontClass}
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="auto"
-              poster={site.videoPoster}
-              aria-hidden
-              tabIndex={-1}
-            >
-              <source src={site.videoSrc} type="video/mp4" />
-            </video>
-          </>
-        ) : (
-          <Scene
-            variant="fachada"
-            label="Fachada da pousada, ilustração"
-            animated
-            className="anim-kenburns h-full w-full"
-          />
-        )}
+      {/* A imagem cobre a tela em qualquer proporção (celular, tablet, computador) */}
+      <div className="anim-kenburns absolute inset-0">
+        <Image
+          src={site.heroImage}
+          alt=""
+          fill
+          priority
+          quality={90}
+          sizes="100vw"
+          className="object-cover object-[50%_58%]"
+        />
       </div>
 
       {/* Escurecimento chapado para dar contraste ao logo */}

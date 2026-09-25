@@ -14,10 +14,8 @@ export const site = {
   url:
     process.env.NEXT_PUBLIC_SITE_URL ??
     "https://llwebsites-pousada-luz-do-sol.vercel.app",
-  /** Vídeo da fachada enviado pela pousada em public/media/fachada.mp4 */
-  hasVideo: true,
-  videoSrc: "/media/fachada.mp4",
-  videoPoster: "/media/fachada-poster.jpg",
+  /** Imagem de fundo do hero, enviada pelo cliente em public/media/hero.jpg */
+  heroImage: "/media/hero.jpg",
   /** Mude para true no lançamento oficial para liberar indexação. */
   indexable: process.env.NEXT_PUBLIC_INDEXABLE === "true",
 };
