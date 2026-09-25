@@ -49,8 +49,8 @@ export const gallery: GalleryItem[] = [
   { id: "c2", category: "Café da manhã", variant: "cafe", seed: 2, alt: "Pães de queijo, bolo e biscoitos no café da manhã", src: "/gallery/cafe-2.jpg" },
   { id: "c3", category: "Café da manhã", variant: "cafe", seed: 2, alt: "Mamão, melancia, geleias e sucos no café da manhã", src: "/gallery/cafe-3.jpg" },
   { id: "c4", category: "Café da manhã", variant: "cafe", seed: 2, alt: "Mesa comprida de madeira com o buffet do café da manhã", src: "/gallery/cafe-4.jpg" },
-  { id: "g1", category: "Área gourmet", variant: "gourmet", seed: 0, alt: "Área gourmet, ilustração" },
-  { id: "g2", category: "Área gourmet", variant: "gourmet", seed: 1, alt: "Espaço para churrasco, ilustração" },
+  { id: "g1", category: "Área gourmet", variant: "gourmet", seed: 0, alt: "Área gourmet com mesa de madeira, sofás e parede verde", src: "/gallery/gourmet-1.jpg" },
+  { id: "g2", category: "Área gourmet", variant: "gourmet", seed: 1, alt: "Área gourmet com churrasqueira de tijolos, mesa e bancos de madeira", src: "/gallery/gourmet-2.jpg" },
   { id: "k1", category: "Carrancas", variant: "cachoeira", seed: 0, alt: "Cachoeira em Carrancas, ilustração" },
   { id: "k2", category: "Carrancas", variant: "cachoeira", seed: 2, alt: "Serra de Carrancas, ilustração" },
 ];
