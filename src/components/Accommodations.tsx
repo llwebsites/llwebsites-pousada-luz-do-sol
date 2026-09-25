@@ -1,24 +1,20 @@
 "use client";
 
 import {
-  Car,
-  Coffee,
-  Dog,
-  Flame,
-  Refrigerator,
   MessageCircle,
+  Refrigerator,
   Snowflake,
   Tv,
-  Waves,
   Wifi,
   type LucideIcon,
 } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import { Reveal } from "@/components/Reveal";
 import { PhotoCarousel, type Photo } from "@/components/PhotoCarousel";
+import { Platforms } from "@/components/Platforms";
 import { Scene } from "@/components/Scene";
 import { SectionTitle } from "@/components/SectionTitle";
-import { amenities, site, whatsappUrl } from "@/lib/site";
+import { site, whatsappUrl } from "@/lib/site";
 
 const rooms: {
   title: string;
@@ -57,16 +53,6 @@ const rooms: {
     ],
   },
 ];
-
-const chipIcons: Record<string, LucideIcon> = {
-  Piscina: Waves,
-  "Café da manhã mineiro": Coffee,
-  "Wi-Fi gratuito": Wifi,
-  Estacionamento: Car,
-  "Ar-condicionado": Snowflake,
-  "Área gourmet": Flame,
-  "Aceita animais": Dog,
-};
 
 export function Accommodations() {
   const reduce = useReducedMotion();
@@ -146,21 +132,7 @@ export function Accommodations() {
           </Reveal>
         </div>
 
-        <Reveal className="mt-12">
-          <ul aria-label="Comodidades" className="flex flex-wrap gap-3">
-            {amenities.map((a) => {
-              const Icon = chipIcons[a] ?? Waves;
-              return (
-                <li
-                  key={a}
-                  className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-sm font-medium text-ink transition hover:border-gold-deep hover:text-gold-deep"
-                >
-                  <Icon size={16} aria-hidden /> {a}
-                </li>
-              );
-            })}
-          </ul>
-        </Reveal>
+        <Platforms />
       </div>
     </section>
   );
