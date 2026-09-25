@@ -14,7 +14,8 @@ export type Platform = {
 };
 
 type InfiniteSliderProps = {
-  children: React.ReactNode;
+  /** Recebe true na cópia usada só para o loop (fora da leitura e do teclado, mas clicável). */
+  children: (hidden: boolean) => React.ReactNode;
   gap?: number;
   duration?: number;
   durationOnHover?: number;
@@ -115,30 +116,36 @@ const InfiniteSlider = memo(function InfiniteSlider({
         {...hoverProps}
       >
         <div className="flex" style={{ gap: `${gap}px`, flexDirection }}>
-          {children}
+          {children(false)}
         </div>
-        {/* Segunda cópia só para o efeito de loop: fora da leitura e do teclado */}
+        {/* Segunda cópia só para o efeito de loop. Fica fora da leitura e da ordem de tab, mas continua clicável com o mouse. */}
         <div
           className="flex"
           style={{ gap: `${gap}px`, flexDirection }}
           aria-hidden
-          inert
         >
-          {children}
+          {children(true)}
         </div>
       </motion.div>
     </div>
   );
 });
 
-const PlatformPill = memo(function PlatformPill({ item }: { item: Platform }) {
+const PlatformPill = memo(function PlatformPill({
+  item,
+  hidden = false,
+}: {
+  item: Platform;
+  hidden?: boolean;
+}) {
   const Icon = item.icon;
   return (
     <a
       href={item.href}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex min-h-[52px] shrink-0 items-center gap-3 rounded-full border border-line bg-white px-6 text-base font-semibold text-ink transition-colors duration-200 hover:border-gold-deep hover:text-gold-deep"
+      tabIndex={hidden ? -1 : undefined}
+      className="inline-flex min-h-[52px] cursor-pointer shrink-0 items-center gap-3 rounded-full border border-line bg-white px-6 text-base font-semibold text-ink transition-colors duration-200 hover:border-gold-deep hover:text-gold-deep"
     >
       <Icon size={20} aria-hidden />
       {item.name}
@@ -180,11 +187,10 @@ export const LogoMarquee = memo(function LogoMarquee({
       className="flex gap-4"
       aria-label={hidden ? undefined : label}
       aria-hidden={hidden || undefined}
-      inert={hidden}
     >
       {logos.map((logo) => (
         <li key={logo.name}>
-          <PlatformPill item={logo} />
+          <PlatformPill item={logo} hidden={hidden} />
         </li>
       ))}
     </ul>
@@ -200,9 +206,12 @@ export const LogoMarquee = memo(function LogoMarquee({
           durationOnHover={160}
           paused={paused}
         >
-          {row(false)}
-          {row(true)}
-          {row(true)}
+          {(hidden) => (
+            <>
+              {row(hidden)}
+              {row(true)}
+            </>
+          )}
         </InfiniteSlider>
       </div>
 
