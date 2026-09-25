@@ -11,8 +11,7 @@ export type GalleryCategory =
   | "Quartos"
   | "Piscina"
   | "Café da manhã"
-  | "Área gourmet"
-  | "Carrancas";
+  | "Área gourmet";
 
 export type GalleryItem = {
   id: string;
@@ -30,12 +29,12 @@ export const categories: GalleryCategory[] = [
   "Piscina",
   "Café da manhã",
   "Área gourmet",
-  "Carrancas",
 ];
 
 export const gallery: GalleryItem[] = [
   { id: "f1", category: "Fachada", variant: "fachada", seed: 0, alt: "Fachada amarela da pousada, com recepção e varandas", src: "/gallery/fachada.jpg" },
-  { id: "f2", category: "Fachada", variant: "fachada", seed: 1, alt: "Entrada da pousada, ilustração" },
+  { id: "f2", category: "Fachada", variant: "fachada", seed: 1, alt: "Fachada amarela com varandas de ferro, jardim e flores", src: "/gallery/fachada-2.jpg" },
+  { id: "f3", category: "Fachada", variant: "fachada", seed: 1, alt: "Recepção com placa, banco e vaso amarelo na entrada", src: "/gallery/fachada-3.jpg" },
   { id: "q1", category: "Quartos", variant: "quarto", seed: 0, alt: "Quarto casal com cabeceira de madeira e abajures", src: "/rooms/casal-1.jpg" },
   { id: "q3", category: "Quartos", variant: "quarto", seed: 0, alt: "Quarto casal com almofadas e vaso de planta", src: "/rooms/casal-2.jpg" },
   { id: "q2", category: "Quartos", variant: "quarto", seed: 2, alt: "Quarto duplo e triplo com janela azul e abajures", src: "/rooms/duplo-1.jpg" },
@@ -51,6 +50,4 @@ export const gallery: GalleryItem[] = [
   { id: "c4", category: "Café da manhã", variant: "cafe", seed: 2, alt: "Mesa comprida de madeira com o buffet do café da manhã", src: "/gallery/cafe-4.jpg" },
   { id: "g1", category: "Área gourmet", variant: "gourmet", seed: 0, alt: "Área gourmet com mesa de madeira, sofás e parede verde", src: "/gallery/gourmet-1.jpg" },
   { id: "g2", category: "Área gourmet", variant: "gourmet", seed: 1, alt: "Área gourmet com churrasqueira de tijolos, mesa e bancos de madeira", src: "/gallery/gourmet-2.jpg" },
-  { id: "k1", category: "Carrancas", variant: "cachoeira", seed: 0, alt: "Cachoeira em Carrancas, ilustração" },
-  { id: "k2", category: "Carrancas", variant: "cachoeira", seed: 2, alt: "Serra de Carrancas, ilustração" },
 ];

@@ -113,9 +113,6 @@ export function Gallery() {
           </AnimatePresence>
         </motion.ul>
 
-        <span className="mt-6 block text-xs text-slate2">
-          Imagens ilustrativas até o envio das fotos oficiais da pousada.
-        </span>
       </div>
 
       <AnimatePresence>
