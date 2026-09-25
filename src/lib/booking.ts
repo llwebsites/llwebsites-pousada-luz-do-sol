@@ -41,30 +41,6 @@ export function buildIndividual(fd: FormData): Built {
   return { ok: true, message: lines.join("\n"), subject: `Reserva - ${nome}` };
 }
 
-export function buildCorporate(fd: FormData): Built {
-  const empresa = clean(fd.get("empresa"), 80);
-  const responsavel = clean(fd.get("responsavel"), 80);
-  const contato = clean(fd.get("contato"), 80);
-  const periodo = clean(fd.get("periodo"), 80);
-  const quantidade = clean(fd.get("quantidade"), 4);
-  const necessidades = clean(fd.get("necessidades"), 500);
-
-  if (!empresa) return { ok: false, error: "Informe o nome da empresa." };
-  if (!responsavel) return { ok: false, error: "Informe o responsável." };
-  if (!contato) return { ok: false, error: "Informe um contato." };
-
-  const lines = [
-    `Olá! Gostaria de um orçamento de hospedagem corporativa na ${site.name}.`,
-    `Empresa: ${empresa}`,
-    `Responsável: ${responsavel}`,
-    `Contato: ${contato}`,
-    `Período: ${periodo || "A definir"}`,
-    `Hóspedes: ${quantidade || "A definir"}`,
-  ];
-  if (necessidades) lines.push(`Necessidades: ${necessidades}`);
-  return { ok: true, message: lines.join("\n"), subject: `Orçamento corporativo - ${empresa}` };
-}
-
 export function dispatch(channel: Channel, built: { message: string; subject: string }) {
   if (channel === "email" && site.email) {
     const href = `mailto:${site.email}?subject=${encodeURIComponent(built.subject)}&body=${encodeURIComponent(built.message)}`;

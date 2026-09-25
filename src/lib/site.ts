@@ -26,7 +26,6 @@ export const nav = [
   { label: "Acomodações", href: "#acomodacoes" },
   { label: "Galeria", href: "#galeria" },
   { label: "Reservas", href: "#reservas" },
-  { label: "Corporativo", href: "#corporativo" },
   { label: "Dúvidas", href: "#duvidas" },
   { label: "Localização", href: "#localizacao" },
 ];

@@ -21,7 +21,6 @@ const blocks = [
     title: "Dados que você informa",
     items: [
       "Nome, datas, quantidade de hóspedes e observações nos formulários de reserva.",
-      "Empresa, responsável, contato e necessidades no formulário corporativo.",
     ],
   },
   {
