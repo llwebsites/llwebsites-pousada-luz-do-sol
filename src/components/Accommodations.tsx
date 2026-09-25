@@ -38,8 +38,13 @@ const rooms: {
     ],
   },
   {
-    title: "Quarto confortável",
+    title: "Quarto duplo/triplo",
     seed: 2,
+    photos: [
+      { src: "/rooms/duplo-1.jpg", alt: "Quarto duplo e triplo com cama de casal, cama de solteiro, janela azul e abajures" },
+      { src: "/rooms/duplo-2.jpg", alt: "Quarto duplo e triplo com televisão, mesa com cadeiras e porta azul" },
+      { src: "/rooms/duplo-3.jpg", alt: "Quarto duplo e triplo com porta aberta para a varanda e luminária de macramê" },
+    ],
     perks: [
       { icon: Coffee, label: "Café da manhã incluído" },
       { icon: Car, label: "Estacionamento" },

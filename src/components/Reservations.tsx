@@ -118,7 +118,7 @@ function IndividualForm() {
           <select id={`${uid}-acom`} name="acomodacao" defaultValue="" className="field">
             <option value="">A definir</option>
             <option value="Quarto casal">Quarto casal</option>
-            <option value="Quarto confortável">Quarto confortável</option>
+            <option value="Quarto duplo/triplo">Quarto duplo/triplo</option>
           </select>
         </div>
         <div className="sm:col-span-2">
