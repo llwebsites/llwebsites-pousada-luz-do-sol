@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #10222b;
+  --pine: #1d5c4e;
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: #ffffff;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 3px solid var(--pine);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.on-dark :focus-visible {
+  outline-color: #ffffff;
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+  .section-y {
+    @apply py-20 sm:py-28;
+  }
+  .btn {
+    @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full px-6 text-sm font-semibold transition duration-200 active:scale-[0.97];
+  }
+  .btn-primary {
+    @apply btn bg-pine text-white hover:bg-pine-dark;
+  }
+  .btn-ghost {
+    @apply btn border border-line bg-white text-ink hover:border-pine hover:text-pine;
+  }
+  .field {
+    @apply block w-full min-h-[44px] rounded-xl border border-line bg-white px-4 text-sm text-ink placeholder:text-slate2/70 transition focus:border-pine focus:outline-none focus:ring-2 focus:ring-pine/30;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-ink;
+  }
+}
+
+/* Movimento das ilustrações */
+@keyframes drift {
+  from { transform: translateX(-40px); }
+  to { transform: translateX(60px); }
+}
+@keyframes kenburns {
+  from { transform: scale(1) translate3d(0, 0, 0); }
+  to { transform: scale(1.12) translate3d(-1.5%, -1%, 0); }
+}
+@keyframes flow {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: -60; }
+}
+@keyframes ripple {
+  from { transform: translateX(0); }
+  to { transform: translateX(-40px); }
+}
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.25; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.08); }
+}
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+.anim-drift { animation: drift 26s ease-in-out infinite alternate; }
+.anim-drift-slow { animation: drift 40s ease-in-out infinite alternate; }
+.anim-kenburns { animation: kenburns 24s ease-in-out infinite alternate; transform-origin: 60% 55%; }
+.anim-flow { stroke-dasharray: 18 14; animation: flow 1.6s linear infinite; }
+.anim-ripple { animation: ripple 6s linear infinite; }
+.anim-pulse { animation: pulse-soft 6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.anim-bob { animation: bob 2.4s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .anim-drift, .anim-drift-slow, .anim-kenburns, .anim-flow, .anim-ripple, .anim-pulse, .anim-bob {
+    animation: none !important;
+  }
+  * { transition-duration: 0.01ms !important; }
+}

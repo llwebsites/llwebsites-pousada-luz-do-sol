@@ -1,0 +1,14 @@
+import Link from "next/link";
+import { Logo } from "@/components/Logo";
+
+export default function NotFound() {
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-center gap-6 bg-mist px-4 text-center">
+      <Logo tone="dark" />
+      <h1 className="text-2xl font-semibold text-ink">Página não encontrada</h1>
+      <Link href="/" className="btn-primary">
+        Voltar ao início
+      </Link>
+    </main>
+  );
+}
