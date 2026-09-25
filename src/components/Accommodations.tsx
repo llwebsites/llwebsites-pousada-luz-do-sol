@@ -5,8 +5,10 @@ import {
   Coffee,
   Dog,
   Flame,
+  Refrigerator,
   MessageCircle,
   Snowflake,
+  Tv,
   Waves,
   Wifi,
   type LucideIcon,
@@ -35,6 +37,8 @@ const rooms: {
     perks: [
       { icon: Snowflake, label: "Ar-condicionado" },
       { icon: Wifi, label: "Wi-Fi" },
+      { icon: Refrigerator, label: "Frigobar" },
+      { icon: Tv, label: "TV" },
     ],
   },
   {
@@ -46,8 +50,10 @@ const rooms: {
       { src: "/rooms/duplo-3.jpg", alt: "Quarto duplo e triplo com porta aberta para a varanda e luminária de macramê" },
     ],
     perks: [
-      { icon: Coffee, label: "Café da manhã incluído" },
-      { icon: Car, label: "Estacionamento" },
+      { icon: Snowflake, label: "Ar-condicionado" },
+      { icon: Wifi, label: "Wi-Fi" },
+      { icon: Refrigerator, label: "Frigobar" },
+      { icon: Tv, label: "TV" },
     ],
   },
 ];
