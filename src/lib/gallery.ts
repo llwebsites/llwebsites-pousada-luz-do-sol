@@ -36,8 +36,10 @@ export const categories: GalleryCategory[] = [
 export const gallery: GalleryItem[] = [
   { id: "f1", category: "Fachada", variant: "fachada", seed: 0, alt: "Fachada amarela da pousada, com recepção e varandas", src: "/gallery/fachada.jpg" },
   { id: "f2", category: "Fachada", variant: "fachada", seed: 1, alt: "Entrada da pousada, ilustração" },
-  { id: "q1", category: "Quartos", variant: "quarto", seed: 0, alt: "Quarto amplo, ilustração" },
+  { id: "q1", category: "Quartos", variant: "quarto", seed: 0, alt: "Quarto casal com cabeceira de madeira e abajures", src: "/rooms/casal-1.jpg" },
+  { id: "q3", category: "Quartos", variant: "quarto", seed: 0, alt: "Quarto casal com almofadas e vaso de planta", src: "/rooms/casal-2.jpg" },
   { id: "q2", category: "Quartos", variant: "quarto", seed: 2, alt: "Quarto confortável, ilustração" },
+  { id: "q4", category: "Quartos", variant: "quarto", seed: 0, alt: "Detalhe da cama com toalha enrolada", src: "/rooms/casal-3.jpg" },
   { id: "p1", category: "Piscina", variant: "piscina", seed: 0, alt: "Piscina da pousada, ilustração" },
   { id: "p2", category: "Piscina", variant: "piscina", seed: 1, alt: "Área da piscina, ilustração" },
   { id: "c1", category: "Café da manhã", variant: "cafe", seed: 0, alt: "Café da manhã mineiro, ilustração" },

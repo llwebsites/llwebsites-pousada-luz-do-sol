@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import { Reveal } from "@/components/Reveal";
+import { PhotoCarousel, type Photo } from "@/components/PhotoCarousel";
 import { Scene } from "@/components/Scene";
 import { SectionTitle } from "@/components/SectionTitle";
 import { amenities, site, whatsappUrl } from "@/lib/site";
@@ -20,11 +21,17 @@ import { amenities, site, whatsappUrl } from "@/lib/site";
 const rooms: {
   title: string;
   seed: number;
+  photos?: Photo[];
   perks: { icon: LucideIcon; label: string }[];
 }[] = [
   {
-    title: "Quarto amplo",
+    title: "Quarto casal",
     seed: 0,
+    photos: [
+      { src: "/rooms/casal-1.jpg", alt: "Quarto casal com cama de casal, cabeceira de madeira, quadros e abajures" },
+      { src: "/rooms/casal-2.jpg", alt: "Quarto casal com almofadas, toalhas dobradas e vaso de planta" },
+      { src: "/rooms/casal-3.jpg", alt: "Detalhe da cama do quarto casal com toalha enrolada e flor" },
+    ],
     perks: [
       { icon: Snowflake, label: "Ar-condicionado" },
       { icon: Wifi, label: "Wi-Fi" },
@@ -69,16 +76,26 @@ export function Accommodations() {
                 transition={{ type: "spring", stiffness: 300, damping: 22 }}
                 className="group h-full overflow-hidden rounded-3xl border border-line bg-white shadow-card"
               >
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <Scene
-                    variant="quarto"
-                    seed={r.seed}
-                    label={`${r.title}, ilustração`}
-                    className="h-full w-full transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <span className="absolute bottom-3 left-3 rounded-full bg-ink/70 px-3 py-1 text-[11px] font-medium text-white">
-                    Imagem ilustrativa
-                  </span>
+                <div className="relative aspect-[4/5] overflow-hidden">
+                  {r.photos ? (
+                    <PhotoCarousel
+                      photos={r.photos}
+                      label={`Fotos do ${r.title.toLowerCase()}`}
+                      className="h-full w-full"
+                    />
+                  ) : (
+                    <>
+                      <Scene
+                        variant="quarto"
+                        seed={r.seed}
+                        label={`${r.title}, ilustração`}
+                        className="h-full w-full transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <span className="absolute bottom-3 left-3 rounded-full bg-ink/70 px-3 py-1 text-[11px] font-medium text-white">
+                        Imagem ilustrativa
+                      </span>
+                    </>
+                  )}
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold">{r.title}</h3>

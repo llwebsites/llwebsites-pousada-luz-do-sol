@@ -117,7 +117,7 @@ function IndividualForm() {
           <label htmlFor={`${uid}-acom`} className="label">Acomodação</label>
           <select id={`${uid}-acom`} name="acomodacao" defaultValue="" className="field">
             <option value="">A definir</option>
-            <option value="Quarto amplo">Quarto amplo</option>
+            <option value="Quarto casal">Quarto casal</option>
             <option value="Quarto confortável">Quarto confortável</option>
           </select>
         </div>
